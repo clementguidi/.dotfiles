@@ -3,7 +3,10 @@ alias l="ls -lh"
 alias ll="ls -lha"
 alias mv="mv -n"
 
-export PS1="\u@\h:\W\$ "
+source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+export PS1='{$?} \W$(__git_ps1 " (%s)")\$ '
 export PKG_CONFIG_PATH="/usr/lib/pkgconfig"
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
